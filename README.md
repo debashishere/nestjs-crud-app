@@ -100,18 +100,27 @@ Nest is [MIT licensed](LICENSE).
 
 ## Creating A New Module
 
+- A module is a class annotated with a @Module() decorator. The @Module() decorator provides metadata that Nest makes use of to organize the application structure.
 - As NestJS allows us to organize our code in modules it’s a good idea to start the implementation with the creation of a new module ( lets generate a courses module):
 
   - run "nest generate module courses"
   - Executing this command is adding a new file to the project: /src/courses/courses.module.ts
+  - Inside this file you can find the following default implementation of an empty module named CoursesModule
 
 ## Creating A New Controller
+
+- Controllers are responsible for handling incoming requests and returning responses to the client.
+- A controller's purpose is to receive specific requests for the application. The routing mechanism controls which controller receives which requests. Frequently, each controller has more than one route, and different routes can perform different actions.
+- Decorators associate classes with required metadata and enable Nest to create a routing map (tie requests to the corresponding controllers).
 
 - run "nest g controller courses"
 - Executing this command is adding a new file to the project: /src/courses/courses.controller.ts
 
 
 ## Setting Up A New Service
+
+- Providers are a fundamental concept in Nest. Many of the basic Nest classes may be treated as a provider – services, repositories, factories, helpers, and so on. 
+- The main idea of a provider is that it can be injected as dependency; this means objects can create various relationships with each other, and the function of "wiring up" instances of objects can largely be delegated to the Nest runtime system.
 
 - run "nest generate service courses"
 - This command is adding a new file courses.service.ts to the project and inserting the initial code.
